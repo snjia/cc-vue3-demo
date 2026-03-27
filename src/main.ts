@@ -4,9 +4,29 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// Element Plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
+// 全局样式
+import '@/assets/styles/index.scss'
+
+// Mock 数据（开发环境）
+if (import.meta.env.DEV) {
+  import('@/mock')
+}
+
 const app = createApp(App)
+
+// 注册 Element Plus 图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 app.use(createPinia())
 app.use(router)
+app.use(ElementPlus, { locale: zhCn })
 
 app.mount('#app')

@@ -1,0 +1,45 @@
+@use './variables' as *;
+@use './reset';
+
+/* NProgress 进度条样式 */
+#nprogress {
+  .bar {
+    background: $primary-color !important;
+    height: 3px !important;
+  }
+
+  .peg {
+    box-shadow:
+      0 0 10px $primary-color,
+      0 0 5px $primary-color !important;
+  }
+}
+
+/* 通用样式 */
+.page-container {
+  padding: 16px;
+  background-color: $bg-color;
+  min-height: calc(100vh - #{$header-height});
+}
+
+.card-container {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* 表格工具栏 */
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* 分页容器 */
+.pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
